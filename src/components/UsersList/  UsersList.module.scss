@@ -1,0 +1,76 @@
+@use "../../styles/ _variables" as *;
+
+.wrap {
+  max-width: 100%;
+  padding: 100px 0;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title { font-size: 32px; line-height: 1.2; text-align: center; margin: 0 0 50px; font-weight: 400; }
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 100%;
+
+  // планшет
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // телефон
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.card {
+  background: #fff;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: 20px 20px;
+  text-align: center;
+  height: auto;
+  width: 400px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    object-fit: cover;
+    background: #eee;
+  }
+
+  h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  p {
+    margin: 0 0 6px;
+    color: $color-muted;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+}
+
+
+.actions {  margin: 30px auto; display: flex; justify-content: center;  grid-column: 1 / -1 }

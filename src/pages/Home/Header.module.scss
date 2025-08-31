@@ -1,34 +1,49 @@
-.hero {
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 60px;
-  background: #f8f9fa;
-  border-bottom: 1px solid #ddd;
+@use "../../styles/ _variables" as *;
+.imgLogo{
+  width: 100%;
+}
+.header {
+  position: sticky;
+  top: 0;
+  height: 9vh;
+  min-height: 70px;
+  z-index: 9999;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border, #e5e7eb);
+}
 
-  &__logo-img {
-    width: 200px;   // лого більше
-    height: auto;   // зберегти пропорції
-  }
 
-  &__buttons {
-    display: flex;
-    gap: 15px;
 
-    .btn {
-      padding: 18px 66px;
-      border: none;
-      border-radius: 100px;
-      background: #F4E041;
-      color: black;
-      font-size: 20px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-
-      &:hover {
-        background: lighten(#F4E041, 15%);
-      }
-    }
+@media (max-width: 768px) {
+  .header {
+    position: relative;
   }
 }
+
+@media (max-width: 480px) {
+  .header {
+    position: relative;
+    height: 8vh;
+  }
+}
+
+.row {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.nav {
+  display: inline-flex;
+  gap: 12px;
+}
+

@@ -1,7 +1,12 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "node16",
+    "module": "Node16",
+    "target": "esnext",
+    "strict": true
+  },
+  "include": [
+    "src"
   ]
 }

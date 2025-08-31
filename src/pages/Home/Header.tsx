@@ -1,16 +1,19 @@
-import "./Hero.scss";
+import styles from "./Header.module.scss";
 import logo from "../../data/Logo.svg"
+import React from 'react';
 
-function Hero() {
+export function Header() {
   return (
-    <header className="hero">
-      <div className="hero__logo"><img  className="hero__logo-img" src={logo} alt="Logo" /></div>
-      <div className="hero__buttons">
-        <button className="btn">Users</button>
-        <button className="btn">Sign up</button>
+    <header className={styles.header}>
+      <div className="container">
+        <div className={styles.row}>
+            <img className="imgLogo" src={logo} alt="LOGO" width="150" height="200" />
+          <nav className={styles.nav}>
+            <a className="btn btn--primary" href="#users">Users</a>
+            <a className="btn btn--primary" href="#signup">Sign up</a>
+          </nav>
+        </div>
       </div>
     </header>
   );
 }
-
-export default Hero;
