@@ -1,0 +1,11 @@
+
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+
+
+User-agent: Googlebot
+Allow: /special-page/
+
+
+Sitemap: https://yoursite.com/sitemap.xml
