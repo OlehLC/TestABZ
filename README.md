@@ -1,69 +1,140 @@
-# React + TypeScript + Vite
+Ось оновлений **`README.md`** з дописаними технологіями з **`package.json`**:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Abz-Test
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Це тестовий проєкт, створений для перевірки знань і навичок у використанні **React**, **Vite**, **TypeScript** та інших технологій. Проєкт має базову структуру з компонентами реєстрації користувачів, списком користувачів і можливістю відправки даних через API.
 
-## Expanding the ESLint configuration
+## Опис
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Цей проєкт включає:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Компоненти для реєстрації користувачів.
+* Використання **Vite** як збірника для швидкого рендерингу.
+* Реалізація запитів до **REST API** для відображення і додавання користувачів.
+* Використання **TypeScript** для безпечної типізації.
+* Використання **SASS/SCSS** для стилізації з оптимізацією CSS.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Встановлення
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Клонуй цей репозиторій:
+
+   ```bash
+   git clone https://github.com/oleglobko/abz-test.git
+   ```
+
+2. Перейди в директорію проєкту:
+
+   ```bash
+   cd abz-test
+   ```
+
+3. Встанови залежності:
+
+   ```bash
+   npm install
+   ```
+
+4. Запусти сервер для розробки:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Відкрий браузер і перейдіть за посиланням:
+
+   ```
+   http://localhost:5173
+   ```
+
+## Технології
+
+### Основні технології
+
+* **React** (17+ або 19.1.1): Бібліотека для побудови користувацьких інтерфейсів.
+* **Vite** (7.1.3): Сучасний збірник та сервер для швидкої розробки.
+* **TypeScript** (5.9.2): Мова програмування, яка забезпечує статичну типізацію для JavaScript.
+* **SASS/SCSS**: Препроцесор CSS для організації стилів.
+
+### Тестування та перевірка коду
+
+* **Vitest** (3.2.4): Тестувальна бібліотека, яка працює разом з Vite.
+* **Playwright** (1.55.0): Бібліотека для тестування інтерфейсів за допомогою браузерів.
+* **ESLint** (9.34.0): Інструмент для аналізу коду на предмет помилок та стилістичних проблем.
+* **Prettier** (3.6.2): Інструмент для автоматичного форматування коду.
+
+### Інші технології та залежності
+
+* **@vitejs/plugin-react** (5.0.2): Плагін для інтеграції React в проєкт за допомогою Vite.
+* **Zod** (4.1.5): Бібліотека для перевірки типів і валідації даних.
+* **Axios** (1.11.0): Бібліотека для виконання HTTP-запитів.
+* **Babel**: Використовується для трансформування сучасного JavaScript.
+* **Webpack** (5.101.3): Інструмент для пакування модулів у JavaScript.
+
+### Налаштування скриптів
+
+У **`package.json`** налаштовані наступні скрипти:
+
+* **`dev`**: Запускає сервер розробки за допомогою **Vite**.
+
+  ```bash
+  npm run dev
+  ```
+* **`build`**: Створює продакшн-білд за допомогою **Vite** та **TypeScript**.
+
+  ```bash
+  npm run build
+  ```
+* **`preview`**: Преглядає створений білд.
+
+  ```bash
+  npm run preview
+  ```
+* **`lint`**: Запускає перевірку коду через **ESLint**.
+
+  ```bash
+  npm run lint
+  ```
+* **`test`**: Запускає тести через **Vitest**.
+
+  ```bash
+  npm run test
+  ```
+* **`e2e`**: Запускає енд-то-енд тести через **Playwright**.
+
+  ```bash
+  npm run e2e
+  ```
+
+## Структура проєкту
+
+```
+abz-test/
+├── src/
+│   ├── components/  # Компоненти (UsersList, RegistrationForm, і т.д.)
+│   ├── pages/       # Сторінки
+│   ├── api/         # API для запитів
+│   ├── styles/      # Стили (globals.scss, і т.д.)
+│   ├── App.tsx      # Головний компонент
+│   └── main.tsx     # Вхідна точка проєкту
+├── public/          # Статичні файли (зображення, іконки, і т.д.)
+├── package.json     # Налаштування проєкту
+└── tsconfig.json    # Конфігурація TypeScript
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Як працює
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **Список користувачів**: використовує **GET-запит** для отримання даних користувачів з API.
+* **Форма реєстрації**: відправляє дані через **POST-запит** для додавання нового користувача в систему.
+* **Використання компонентів**: проект структурується з використанням компонентів для відображення списку користувачів і форми реєстрації.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Відомі проблеми
+
+* У разі використання старих версій **React** або **Vite** можуть виникати проблеми з сумісністю.
+* При запуску на старших версіях Node.js можуть виникати проблеми з плагінами Vite.
+
+## Ліцензія
+
+Цей проєкт ліцензується під **MIT License**.
+
